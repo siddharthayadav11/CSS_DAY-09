@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    font-family:  serif;
+}
+body {
+    margin: 0;
+    padding:0;
+}
+.head{
+    position: fixed;
+    z-index: 1000;
+    background-color: black;
+    width:100%;
+    margin-top: -20px;
+    height:80px;
+    top:20px;
+    padding: 8px 16px;
+}
+body {
+    background-image: url("images/wp1985242-christopher-nolan-wallpapers.jpg");
+    width:100%;
+    height:100%;
+  }
+main{
+    margin-top:80px;
+}
+.text{
+    color: white;
+    width: 8%;
+    font-size: 1.5rem;    
+    font-weight: bold;
+}
+nav{
+    display:flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.kkk{
+   flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+strong{
+    font-size: 1.9rem;
+    padding: 20px;
+    color: white;
+}
+p{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 250px;
+    justify-content: center;
+}
+.item {
+    flex: 1 1 30%;
+    margin: 20px 15px;
+    position: relative; /* Needed for the overlay effect */
+    overflow: hidden; /* Ensures that the zoomed image doesn't overflow */
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for zoom and shade */
+}
+
+/* Overlay effect */
+.item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+}
+
+.item:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    filter: brightness(0.7); /* Slightly darkens the image */
+}
+
+.item:hover::after {
+    background-color: rgba(0, 0, 0, 0.4); /* Adds a black shade on hover */
+}
